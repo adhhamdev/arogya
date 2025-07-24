@@ -34,6 +34,7 @@ export async function middleware(request: NextRequest) {
 
   // Get user profile for role-based routing
   let userRole = null
+  /*
   if (user) {
     const { data: profile } = await supabase.from("user_profiles").select("role").eq("id", user.id).single()
     userRole = profile?.role
@@ -79,7 +80,7 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL("/doctor", request.url))
     }
   }
-
+*/
   return supabaseResponse
 }
 
