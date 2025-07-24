@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile-first responsive design */
+@layer components {
+  /* Container Classes */
+  .mobile-container {
+    @apply max-w-sm mx-auto bg-white min-h-screen;
+  }
+
+  .responsive-container {
+    @apply w-full max-w-sm mx-auto bg-white min-h-screen;
+    @apply md:max-w-none md:bg-gray-50;
+  }
+
+  /* Layout Classes */
+  .section-padding {
+    @apply px-6 py-8;
+    @apply md:px-8 md:py-12;
+    @apply lg:px-12 lg:py-16;
+  }
+
+  .content-spacing {
+    @apply space-y-6;
+    @apply md:space-y-8;
+    @apply lg:space-y-10;
+  }
+
+  /* Card Components */
+  .card-mobile {
+    @apply bg-white rounded-3xl shadow-sm border border-gray-100 p-6;
+    @apply md:rounded-2xl md:shadow-md md:hover:shadow-lg md:transition-all md:duration-200;
+    @apply lg:p-8;
+  }
+
+  .card-responsive {
+    @apply bg-white rounded-3xl shadow-sm border border-gray-100 p-4;
+    @apply md:rounded-2xl md:shadow-md md:p-6;
+    @apply lg:p-8;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200;
+    @apply md:hover:shadow-lg md:hover:scale-[1.02];
+    @apply lg:hover:scale-105;
+    @apply cursor-pointer;
+  }
+
+  /* Button Components */
+  .btn-primary {
+    @apply w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-200;
+    @apply md:w-auto md:px-8;
+    @apply focus:outline-none focus:ring-4 focus:ring-blue-200;
+  }
+
+  .btn-secondary {
+    @apply w-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold py-4 px-6 rounded-2xl transition-all duration-200;
+    @apply md:w-auto md:px-8;
+    @apply focus:outline-none focus:ring-4 focus:ring-gray-200;
+  }
+
+  /* Input Components */
+  .input-mobile {
+    @apply w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-500;
+    @apply focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-500;
+    @apply md:py-3;
+  }
+
+  .input-responsive {
+    @apply w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-500;
+    @apply focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-blue-500;
+    @apply md:py-4;
+  }
+
+  /* Typography */
+  .heading-responsive {
+    @apply text-2xl font-bold;
+    @apply md:text-3xl;
+    @apply lg:text-4xl;
+  }
+
+  .subheading-responsive {
+    @apply text-lg font-semibold;
+    @apply md:text-xl;
+    @apply lg:text-2xl;
+  }
+
+  .body-responsive {
+    @apply text-base;
+    @apply md:text-lg;
+  }
+
+  /* Grid Systems */
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 gap-4;
+    @apply sm:grid-cols-2;
+    @apply md:gap-6;
+    @apply lg:gap-8;
+  }
+
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 gap-4;
+    @apply sm:grid-cols-2;
+    @apply lg:grid-cols-3;
+    @apply md:gap-6;
+    @apply lg:gap-8;
+  }
+
+  .grid-responsive-4 {
+    @apply grid grid-cols-2 gap-4;
+    @apply md:grid-cols-4;
+    @apply md:gap-6;
+    @apply lg:gap-8;
+  }
+
+  /* Form Components */
+  .form-responsive {
+    @apply space-y-4;
+    @apply md:space-y-6;
+  }
+
+  .form-group-responsive {
+    @apply space-y-2;
+    @apply md:space-y-3;
+  }
+
+  /* Navigation Components */
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 z-50;
+    @apply md:hidden;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center justify-center py-2 px-3 rounded-xl transition-all duration-200;
+    @apply text-gray-600 hover:text-blue-600;
+  }
+
+  .nav-item.active {
+    @apply text-blue-600 bg-blue-50;
+  }
+
+  /* Sidebar Navigation */
+  .sidebar-layout {
+    @apply hidden md:flex md:flex-col md:w-64 md:bg-white md:border-r md:border-gray-200 md:fixed md:inset-y-0 md:z-50;
+    @apply lg:w-72;
+  }
+
+  .sidebar-nav-item {
+    @apply flex items-center px-4 py-3 mx-4 rounded-2xl text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all duration-200;
+  }
+
+  .sidebar-nav-item.active {
+    @apply bg-blue-50 text-blue-600;
+  }
+
+  /* Desktop Layout */
+  .desktop-layout {
+    @apply flex;
+  }
+
+  .desktop-main {
+    @apply flex-1;
+    @apply md:ml-64;
+    @apply lg:ml-72;
+  }
+
+  /* Mobile Bottom Padding */
+  .mobile-bottom-padding {
+    @apply pb-20;
+    @apply md:pb-0;
+  }
+
+  /* Responsive Display */
+  .mobile-only {
+    @apply block;
+    @apply md:hidden;
+  }
+
+  .desktop-only {
+    @apply hidden;
+    @apply md:block;
+  }
+
+  .tablet-up {
+    @apply hidden;
+    @apply sm:block;
+  }
+
+  .mobile-tablet {
+    @apply block;
+    @apply lg:hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus styles for accessibility */
+.focus-visible {
+  @apply outline-none ring-4 ring-blue-200;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
