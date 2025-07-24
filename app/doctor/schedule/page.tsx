@@ -180,5 +180,7 @@ export default async function DoctorSchedule() {
             </CardContent>
           </Card>
         </TabsContent>
-
-        <TabsContent value\
+        </Tabs>
+      </div>
+    )
+}
